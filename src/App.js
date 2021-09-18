@@ -1,11 +1,12 @@
-import './App.css';
+import React from 'react';
+import HomePage from './homepage.component';
 
 const App = () => {
   return (
     <div className="App">
-      Hello World
+    <HomePage/>
     </div>
   );
 }
 
-export default App;
+export default App; 
