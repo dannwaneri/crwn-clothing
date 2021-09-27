@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch,Route } from 'react-router-dom';
+import { Switch,Route,Redirect } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {setCurrentUser} from './redux/user/user.action'
 import './App.css';
@@ -43,7 +43,8 @@ return (
       <Switch>
       <Route exact path="/" component={HomePage}/>
       <Route path="/shop" component={ShopPage}/>
-      <Route path="/signin" component={SignInAndSignUpPage}/>
+      <Route exact path="/signin"
+       render={ () => this.props.currentUser ? <Redirect to='/'/> : <SignInAndSignUpPage/>}/>
       </Switch>
       
     </div>
