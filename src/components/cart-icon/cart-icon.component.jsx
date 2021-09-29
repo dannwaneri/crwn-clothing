@@ -1,5 +1,5 @@
 import React from "react";
-import {Connect} from 'react-redux'
+import {connect} from 'react-redux'
 import {toggleCartHidden} from '../../redux/cart/cart.action'
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 import './cart-icon.style.scss';
@@ -15,4 +15,4 @@ const CartIcon = ({toggleCartHidden}) => (
         toggleCartHidden : () => dispatch(toggleCartHidden())
     })
 
-export default Connect(null, mapDispatchToProps)(CartIcon);
+export default connect(null, mapDispatchToProps)(CartIcon);
